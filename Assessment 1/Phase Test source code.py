@@ -83,6 +83,18 @@ fig = px.histogram(edu_dataset, x='Academic Status', color='Marital status', mar
 fig.show()
 fig = px.histogram(edu_dataset, x='Academic Status', color='Educational special needs', marginal= "rug", width= 600, height=400)
 fig.show()
-fig = px.histogram(edu_dataset, x='Curricular units 1st sem (grade)', color='', marginal= "rug", width= 600, height=400)
+fig = px.histogram(edu_dataset, x='Curricular units 1st sem (grade)', color='Academic Status', marginal= "rug", width= 600, height=400)
 fig.show()
+fig = px.histogram(edu_dataset, x='Admission grade', color='Academic Status', marginal= "rug", width= 600, height=400)
+fig.show()
+fig = px.histogram(edu_dataset, x='Age at enrollment', color='Academic Status', marginal= "rug", width= 600, height=400)
+fig.show()
+fig = px.histogram(edu_dataset, x='GDP', color='Academic Status', marginal= "rug", width= 600, height=400)
+fig.show()
+fig = px.histogram(edu_dataset, x='Inflation rate', color='Academic Status', marginal= "rug", width= 600, height=400)
+fig.show()
+
+fig.ax
+fig.subtitle("Correlation between features", fontsize =16)
+
 
