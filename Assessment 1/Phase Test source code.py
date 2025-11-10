@@ -94,7 +94,19 @@ fig.show()
 fig = px.histogram(edu_dataset, x='Inflation rate', color='Academic Status', marginal= "rug", width= 600, height=400)
 fig.show()
 
-fig.ax
-fig.subtitle("Correlation between features", fontsize =16)
 
 
+#use elbow methods to determnine numbner of clusters
+Elbow_M = KElbowVisualizer(KMeans(), k=14, timings= False)
+#Elbow_M.fit(edu_dataset) #error in code
+#Elbow_M.show()
+
+number_clusters=14
+fcm = FCM(n_clusters=number_clusters)
+fcm.fit(edu_dataset.values)
+fcm_centers = fcm.centers
+fcm_labels = fcm.predict(edu_dataset.values)
+edu_dataset['Fuzzy_cluster'] = fcm_labels
+edu_dataset
+sns.relplot(x='Admission Grade', y='Academic Status', hue='Fuzzy_cluster', size='Gender', data=edu_dataset, palette='Paired')
+plt.show()
